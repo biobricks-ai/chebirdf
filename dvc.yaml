@@ -1,0 +1,11 @@
+stages:
+  download:
+    cmd: wget -r -m -P ./download ftp://ftp.ebi.ac.uk/pub/databases/chebi/ontology/
+    outs:
+      - download/ftp.ebi.ac.uk/pub/databases/chebi:
+          persist: true
+          cache: true
+  build:
+    cmd: Rscript src/1_build_parquet.R
+    outs:
+      - data/chebi_rdf.parquet
