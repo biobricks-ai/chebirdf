@@ -1,0 +1,36 @@
+{
+  "@context": "../../context/source.context.jsonld",
+  "@type": "dcat:Dataset",
+  "@id": "https://biobricks.ai/bricks/chebirdf",
+  "dcterms:title": "ChEBI (Chemical Entities of Biological Interest) ontology",
+  "dcterms:description": "The ChEBI ontology (chebi_core.obo and related RDF/OBO files) extracted into a subject-predicate-object parquet table. Downloaded by the brick's dvc.yaml from the EMBL-EBI ChEBI FTP site (ftp://ftp.ebi.ac.uk/pub/databases/chebi/ontology/) and parsed into RDF triples. ChEBI is a freely available dictionary of molecular entities focused on small chemical compounds, maintained by EMBL-EBI.",
+  "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+  "biobricks:licenseName": "CC BY 4.0",
+  "biobricks:licenseClass": "attribution",
+  "biobricks:merckCommercialUse": "conditional",
+  "dcterms:publisher": "EMBL-EBI (European Bioinformatics Institute)",
+  "biobricks:licenseEvidence": [
+    {
+      "source": "dvc.yaml",
+      "quote": "cmd: wget -r -m -P ./download ftp://ftp.ebi.ac.uk/pub/databases/chebi/ontology/",
+      "confidence": "high"
+    },
+    {
+      "source": "EMBL-EBI ChEBI 2.0 launch / About ChEBI (embl.org, ebi.ac.uk, via web search)",
+      "quote": "ChEBI data continues to be available under CC BY 4.0. All data in the ChEBI database is non-proprietary or is derived from a non-proprietary source. It is thus freely accessible and available to anyone.",
+      "confidence": "high"
+    }
+  ],
+  "biobricks:reviewed": false,
+  "biobricks:reviewNotes": "Determined by licensing-provenance annotation agent (Claude). Upstream confirmed from dvc.yaml as the EMBL-EBI ChEBI ontology FTP directory (ftp.ebi.ac.uk/pub/databases/chebi/ontology/), corroborated by the README which references the ChEBI FTP README. EMBL-EBI publishes ChEBI under CC BY 4.0 (attribution). Commercial use is allowed but conditioned on attribution, hence conditional. Reviewer may confirm the exact CC BY 4.0 statement on the current ChEBI/EBI licensing page.",
+  "prov:wasDerivedFrom": [
+    {
+      "@type": "dcat:Dataset",
+      "@id": "https://www.ebi.ac.uk/chebi/",
+      "dcterms:title": "Chemical Entities of Biological Interest (ChEBI) ontology",
+      "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+      "dcat:downloadURL": "ftp://ftp.ebi.ac.uk/pub/databases/chebi/ontology/",
+      "dcterms:publisher": "EMBL-EBI"
+    }
+  ]
+}
